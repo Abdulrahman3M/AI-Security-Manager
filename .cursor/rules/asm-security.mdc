@@ -1,0 +1,12 @@
+---
+description: Use AI Security Manager procedures when the user requests an authorized code security audit, threat model, security review or remediation plan.
+alwaysApply: false
+---
+
+# AI Security Manager — Cursor integration
+
+On a user-requested defensive audit, consult `AGENTS.md`, `skills/security-audit/SKILL.md`, `prompts/master-audit.md` and the relevant platform profile(s). Start read-only, respect authorization and redact secrets. If source is unavailable, report limits; do not fabricate scan results.
+
+Run `python scripts/asm.py scan TARGET --format json` only when target files are available locally and tool execution is allowed. This is a heuristic baseline, not exploit verification.
+
+Output prioritized evidence-backed findings, confidence, validation status, patch advice, regression tests and an explicit coverage matrix. Never promise 100% detection.
