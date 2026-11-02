@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#070d1c">
+  <meta name="description" content="AI Security Manager — A portable defensive security review toolkit. Skills, baseline scans, evidence-based findings, and platform-aware methodology.">
+  <title>AI Security Manager · Defensive Intelligence</title>
+  <meta property="og:title" content="AI Security Manager — Defensive Intelligence">
+  <meta property="og:description" content="Secure code reviews across web, API, mobile, desktop and cloud, with evidence and clear limitations.">
+  <meta property="og:image" content="assets/asm-cover.svg">
+  <style>
+    :root{color-scheme:dark;--bg:#070b15;--surface:#0e1628;--panel:#111b2e;--line:#23334c;--muted:#98abc9;--text:#edf5ff;--cyan:#49d6ff;--mint:#61ebbc;--blue:#537dff;--purple:#a08aff}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Calibri,Inter,"Segoe UI",Arial,sans-serif;overflow-x:hidden}
+    body:before{content:"";position:fixed;inset:-20% -20% auto;height:800px;background:radial-gradient(ellipse at 50% 20%,#10427b65,transparent 61%);pointer-events:none;z-index:-1}
+    a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:4px}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}.header{position:sticky;top:0;z-index:30;background:#070d1de8;border-bottom:1px solid #28405b70;backdrop-filter:blur(22px)}
+    .nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;font-size:18px;font-weight:800;letter-spacing:-.4px}.brand-icon{display:grid;place-items:center;width:42px;height:42px;border:1px solid #5291c270;border-radius:13px;background:linear-gradient(135deg,#112846,#0a1427);color:var(--cyan);box-shadow:inset 0 0 20px #3299ff25}
+    .nav-links{display:flex;gap:30px;color:#b2c3dd;font-size:14px}.nav-links a:hover{color:white}.nav-actions{display:flex;gap:10px}.lang,.secondary,.primary{border-radius:12px;display:inline-flex;justify-content:center;align-items:center;gap:9px;font-weight:700;transition:transform .2s,background .2s,border-color .2s}.lang{background:#182339;border:1px solid #314461;color:#b7daf4;padding:9px 12px}.primary{padding:13px 21px;color:#06172a;background:linear-gradient(135deg,#76e5ff,#4e92ff);box-shadow:0 12px 35px #00aaff1e}.secondary{padding:12px 21px;border:1px solid #445775;background:#101d31;color:#e2efff}.primary:hover,.secondary:hover{transform:translateY(-2px)}.secondary:hover{border-color:#7dcfff}
+    .hero{padding:100px 0 83px;display:grid;grid-template-columns:1.03fr .97fr;align-items:center;gap:34px}.eyebrow{display:inline-flex;align-items:center;gap:10px;background:#0e2840;border:1px solid #1d5770;color:#8aeaff;border-radius:100px;font-weight:800;padding:7px 14px;font-size:13px;letter-spacing:.3px}.dot{height:7px;width:7px;border-radius:50%;background:var(--mint);box-shadow:0 0 12px var(--mint)}
+    h1{font-size:clamp(40px,5.2vw,70px);line-height:1.12;letter-spacing:-2px;margin:25px 0 19px;font-weight:900}h1 span,.gradient{background:linear-gradient(105deg,#91f3ff,#6ba6ff,#b3a8ff);-webkit-background-clip:text;background-clip:text;color:transparent}.lead{font-size:18px;color:#aebfda;max-width:590px;margin:0 0 28px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-visual{position:relative;isolation:isolate}.hero-visual:before{content:"";position:absolute;inset:15%;background:#1c9ffb;filter:blur(85px);opacity:.16;z-index:-1}.hero-visual img{display:block;width:118%;max-width:none;position:relative;inset-inline-start:9%;border-radius:24px;mask-image:radial-gradient(ellipse at 56% 50%,#000 38%,transparent 80%);filter:drop-shadow(0 22px 50px #0e54ac35)}
+    .micro{display:flex;gap:22px;flex-wrap:wrap;color:#849cba;font-size:13px;margin-top:24px}.micro b{color:#cdf5ff}.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #243752;border-radius:18px;background:#101a2ca8;overflow:hidden;backdrop-filter:blur(8px)}.stat{padding:25px;text-align:center;border-inline-end:1px solid #243752}.stat:last-child{border:0}.stat strong{display:block;font-size:23px;color:#b5edff;line-height:1.3}.stat small{font-size:13px;color:#92a9c8}
+    section{padding:88px 0}.section-intro{text-align:center;margin:0 auto 42px;max-width:740px}.label{font-size:12px;letter-spacing:1.7px;font-weight:800;color:#63d8ff;text-transform:uppercase}.section-intro h2,h2{font-size:clamp(29px,3vw,43px);line-height:1.2;margin:10px 0 15px;letter-spacing:-.8px}.section-intro p,.section-sub{color:#99acc7;margin:0}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{padding:28px;border:1px solid #243550;border-radius:20px;background:linear-gradient(145deg,#15223a,#0c1526);transition:border-color .25s,transform .25s}.card:hover{border-color:#4481b0;transform:translateY(-3px)}.card-icon{display:grid;place-items:center;width:49px;height:49px;border-radius:14px;background:#12344c;color:#7be5ff;border:1px solid #2b5973;margin-bottom:19px;font-size:24px}.card h3{font-size:19px;margin:0 0 9px}.card p{color:#a2b2c8;margin:0;font-size:14px}
+    .band{padding:68px 0;background:linear-gradient(180deg,#0b1424,#0d192b 50%,#081020);border-block:1px solid #253750}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.step{background:#111e32;padding:24px;border:1px solid #243550;border-radius:17px}.step .num{font-size:13px;color:var(--cyan);font-weight:900}.step h3{margin:12px 0 8px}.step p{font-size:14px;color:#98afc9;margin:0}
+    .lab{display:grid;grid-template-columns:.9fr 1.1fr;gap:23px;align-items:stretch}.terminal{border:1px solid #314765;background:#070e1c;border-radius:18px;overflow:hidden;box-shadow:0 25px 55px #0005;min-width:0}.terminal-top{background:#122036;border-bottom:1px solid #30405c;padding:13px 19px;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:#a6bbd8}.lights{display:flex;gap:6px}.lights span{width:9px;height:9px;border-radius:50%;background:#406385}.lights span:first-child{background:#ef7075}.lights span:nth-child(2){background:#f0c275}.lights span:nth-child(3){background:#65d09b}.terminal pre{direction:ltr;text-align:left;padding:26px;margin:0;color:#b1cbe0;overflow:auto;font:14px/1.9 Consolas,"Courier New",monospace;white-space:pre}.cyan{color:#6ae2ff}.green{color:#75e9b5}.purple{color:#b8aaff}.lab-details{align-self:center}.lab-details h2{margin-top:12px}.lab-details p{color:#9db1cf}.pillset{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0}.pill{border:1px solid #315170;color:#a3dfff;border-radius:100px;padding:7px 13px;background:#112039;font-size:12px;font-weight:700}
+    .note{margin:0;padding:24px;border-radius:17px;border:1px solid #365377;background:linear-gradient(100deg,#122740,#0f1a2d);color:#bbcee6}.note strong{color:white}.note code{color:#7ce8ff}
+    .footer{border-top:1px solid #253750;padding:35px 0;color:#90a4be;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot a{color:#9ce9ff}
+    @media(max-width:930px){.hero{grid-template-columns:1fr;padding:72px 0}.hero-visual{order:-1;max-width:660px;margin:auto}.hero-visual img{width:100%;inset:0}.nav-links{display:none}.grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.lab{grid-template-columns:1fr}.stat{padding:18px 8px}}
+    @media(max-width:580px){.container{width:min(100% - 28px,1160px)}.header .nav{height:70px}.brand{font-size:15px}.brand-icon{width:37px;height:37px}.hero{padding:42px 0 57px;gap:6px}h1{font-size:42px}.lead{font-size:16px}.hero-visual img{width:115%;margin-inline-start:-7%}.stats{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border:0}.stat:nth-child(-n+2){border-bottom:1px solid #243752}.grid,.steps{grid-template-columns:1fr}section{padding:62px 0}.hero-actions a{flex:1}.terminal pre{font-size:12px;padding:18px}.micro{gap:12px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}}
+  </style>
+</head>
+<body>
+<header class="header"><div class="container nav">
+  <a class="brand" href="#top" aria-label="AI Security Manager"><span class="brand-icon" aria-hidden="true">⬡</span><span>AI Security <span style="color:#67dcff">Manager</span></span></a>
+  <nav class="nav-links" aria-label="Sections"><a href="#capabilities" data-ar="التخصصات" data-en="Coverage">التخصصات</a><a href="#workflow" data-ar="آلية العمل" data-en="Workflow">آلية العمل</a><a href="#toolkit" data-ar="ابدأ الآن" data-en="Get started">ابدأ الآن</a></nav>
+  <div class="nav-actions"><button class="lang" id="langToggle" type="button" aria-label="Switch language">EN</button><a class="secondary" style="padding:9px 14px;font-size:13px" href="https://github.com/Abdulrahman3M/AI-Security-Manager" target="_blank" rel="noopener noreferrer">GitHub ↗</a></div>
+</div></header>
+<main id="top">
+<div class="container">
+  <div class="hero">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="dot"></span><span data-ar="منظومة مفتوحة المصدر · نسخة تأسيسية 0.1" data-en="OPEN SOURCE TOOLKIT · FOUNDATION v0.1">منظومة مفتوحة المصدر · نسخة تأسيسية 0.1</span></span>
+      <h1 data-ar="ذكاء دفاعي.<br><span>كود أكثر أمانًا.</span>" data-en="Defensive intelligence.<br><span>Safer software.</span>">ذكاء دفاعي.<br><span>كود أكثر أمانًا.</span></h1>
+      <p class="lead" data-ar="مساعد شامل لمراجعة أمن المشاريع البرمجية: من الواجهات وقواعد البيانات إلى تطبيقات الهاتف وسطح المكتب والبنية السحابية. نتائج موثقة، وأولويات واضحة، وخطة عملية للإصلاح." data-en="A portable security review companion for web, databases, mobile, desktop, and cloud software. Evidence-backed findings, clear coverage limits, and actionable remediation.">مساعد شامل لمراجعة أمن المشاريع البرمجية: من الواجهات وقواعد البيانات إلى تطبيقات الهاتف وسطح المكتب والبنية السحابية. نتائج موثقة، وأولويات واضحة، وخطة عملية للإصلاح.</p>
+      <div class="hero-actions"><a class="primary" href="GETTING_STARTED.md" data-ar="ابدأ الفحص الأولي ←" data-en="Start baseline review →">ابدأ الفحص الأولي ←</a><a class="secondary" href="#capabilities" data-ar="استكشف التخصصات" data-en="Explore coverage">استكشف التخصصات</a></div>
+      <div class="micro"><span data-ar="✓ قراءة فقط افتراضيًا" data-en="✓ Read-only by default">✓ قراءة فقط افتراضيًا</span><span data-ar="✓ لا يحتاج API للتشغيل المحلي" data-en="✓ Baseline needs no API">✓ لا يحتاج API للتشغيل المحلي</span><span data-ar="✓ لا وعود بأمان مطلق" data-en="✓ No false security guarantees">✓ لا وعود بأمان مطلق</span></div>
+    </div>
+    <div class="hero-visual"><img src="assets/asm-cover.svg" alt="Original cyan shield and secure chip visual for AI Security Manager"></div>
+  </div>
+  <div class="stats" aria-label="Review overview">
+    <div class="stat"><strong>4</strong><small data-ar="المخاطر الأساسية" data-en="Core risk themes">المخاطر الأساسية</small></div>
+    <div class="stat"><strong>6</strong><small data-ar="مجالات برمجية" data-en="Platform families">مجالات برمجية</small></div>
+    <div class="stat"><strong>3</strong><small data-ar="صيغ التقارير" data-en="Report formats">صيغ التقارير</small></div>
+    <div class="stat"><strong>0</strong><small data-ar="تشغيل لكود المشروع أثناء الفحص" data-en="Target code executions in baseline">تشغيل لكود المشروع أثناء الفحص</small></div>
+  </div>
+</div>
+<section id="capabilities"><div class="container">
+  <div class="section-intro"><div class="label">COVERAGE MAP</div><h2 data-ar="تغطية الأمن عبر طبقات البرمجيات" data-en="Security across the software stack">تغطية الأمن عبر طبقات البرمجيات</h2><p data-ar="يُوجّه كل تخصص عملية المراجعة. بعض الاختبارات تحتاج أدوات مخصصة أو تدقيقًا بشريًا، ولا تعمل جميعها تلقائيًا في الإصدار الأول." data-en="Each profile guides the audit. Many checks require specialist tools, environment access, or expert review; not all run automatically in v0.1.">يُوجّه كل تخصص عملية المراجعة. بعض الاختبارات تحتاج أدوات مخصصة أو تدقيقًا بشريًا، ولا تعمل جميعها تلقائيًا في الإصدار الأول.</p></div>
+  <div class="grid">
+    <article class="card"><div class="card-icon">⌘</div><h3 data-ar="Web & Frontend" data-en="Web & Frontend">Web & Frontend</h3><p data-ar="XSS، CSRF، تسريب المفاتيح، الجلسات، CORS، إعدادات المتصفح، وحدود الثقة بين الواجهة والخادم." data-en="XSS, CSRF, exposed secrets, sessions, CORS, browser configurations and client-server trust boundaries.">XSS، CSRF، تسريب المفاتيح، الجلسات، CORS، إعدادات المتصفح، وحدود الثقة بين الواجهة والخادم.</p></article>
+    <article class="card"><div class="card-icon">◎</div><h3>Backend & API</h3><p data-ar="المصادقة، الصلاحيات، IDOR/BOLA، الحقن، حماية الملفات، تحديد معدل الطلبات وأخطاء المنطق." data-en="Authentication, authorization, IDOR/BOLA, injection, uploads, rate limiting and business logic issues.">المصادقة، الصلاحيات، IDOR/BOLA، الحقن، حماية الملفات، تحديد معدل الطلبات وأخطاء المنطق.</p></article>
+    <article class="card"><div class="card-icon">▤</div><h3>Database & Storage</h3><p data-ar="صلاحيات قواعد البيانات، سياسات Supabase RLS، عزل المستأجرين، SQL وSQLite وحماية النسخ الاحتياطية." data-en="Database grants, Supabase RLS policies, tenant isolation, SQL/SQLite and secure backups.">صلاحيات قواعد البيانات، سياسات Supabase RLS، عزل المستأجرين، SQL وSQLite وحماية النسخ الاحتياطية.</p></article>
+    <article class="card"><div class="card-icon">▣</div><h3>Mobile & Desktop</h3><p data-ar="Android، iOS، Windows، macOS، Linux؛ التخزين المحلي، الصلاحيات، التحديثات وتكامل واجهات النظام." data-en="Android, iOS, Windows, macOS, Linux; local storage, permissions, updates and native integrations.">Android، iOS، Windows، macOS، Linux؛ التخزين المحلي، الصلاحيات، التحديثات وتكامل واجهات النظام.</p></article>
+    <article class="card"><div class="card-icon">◇</div><h3>Cloud & Supply Chain</h3><p data-ar="الحاويات، CI/CD، الاعتمادات البرمجية، الثغرات المعروفة، IAM، وإعدادات النشر." data-en="Containers, CI/CD, dependencies, published vulnerabilities, IAM and deployment configuration.">الحاويات، CI/CD، الاعتمادات البرمجية، الثغرات المعروفة، IAM، وإعدادات النشر.</p></article>
+    <article class="card"><div class="card-icon">✧</div><h3>AI & Software Quality</h3><p data-ar="Prompt Injection، أمان أدوات AI، أخطاء المنطق، الأداء والاعتمادية. تُصنف عيوب الجودة منفصلة عن الثغرات الأمنية." data-en="Prompt injection, AI tool permissions, logic flaws, performance and resilience. Quality defects are separate from security findings.">Prompt Injection، أمان أدوات AI، أخطاء المنطق، الأداء والاعتمادية. تُصنف عيوب الجودة منفصلة عن الثغرات الأمنية.</p></article>
+  </div>
+</div></section>
+<section id="workflow" class="band"><div class="container">
+  <div class="section-intro"><div class="label">REVIEW PIPELINE</div><h2 data-ar="من قراءة الكود إلى خطة إصلاح" data-en="From source to a remediation plan">من قراءة الكود إلى خطة إصلاح</h2></div>
+  <div class="steps">
+    <div class="step"><span class="num">01 / DISCOVER</span><h3 data-ar="فهم المشروع" data-en="Inventory">فهم المشروع</h3><p data-ar="تحديد اللغات، الإطار البرمجي، تدفقات البيانات والصلاحيات وحدود الثقة." data-en="Map languages, frameworks, data flows, permissions and trust boundaries.">تحديد اللغات، الإطار البرمجي، تدفقات البيانات والصلاحيات وحدود الثقة.</p></div>
+    <div class="step"><span class="num">02 / ANALYZE</span><h3 data-ar="الفحص والمراجعة" data-en="Analyze">الفحص والمراجعة</h3><p data-ar="جمع إشارات آلية ومراجعة المنطق والتهيئة، مع أدوات إضافية عند توفرها." data-en="Combine baseline signals, contextual analysis and optional specialist tools.">جمع إشارات آلية ومراجعة المنطق والتهيئة، مع أدوات إضافية عند توفرها.</p></div>
+    <div class="step"><span class="num">03 / TRIAGE</span><h3 data-ar="التحقق والتصنيف" data-en="Triage">التحقق والتصنيف</h3><p data-ar="تمييز الثغرات المثبتة عن الاشتباه، مع خطورة وأدلة ومستوى ثقة." data-en="Separate validated issues from hypotheses, with severity, evidence and confidence.">تمييز الثغرات المثبتة عن الاشتباه، مع خطورة وأدلة ومستوى ثقة.</p></div>
+    <div class="step"><span class="num">04 / REMEDIATE</span><h3 data-ar="العلاج والاختبار" data-en="Remediate">العلاج والاختبار</h3><p data-ar="شرح الإصلاح ومقترحات الاختبارات دون تغيير كود المشروع تلقائيًا." data-en="Propose targeted fixes and regression tests without silently editing code.">شرح الإصلاح ومقترحات الاختبارات دون تغيير كود المشروع تلقائيًا.</p></div>
+  </div>
+</div></section>
+<section id="toolkit"><div class="container lab">
+  <div class="lab-details"><div class="label">LOCAL SECURITY TOOLKIT</div><h2 data-ar="ابدأ بالتحقق المحلي. ثم أضف ذكاء النموذج." data-en="Start with a local review. Add model reasoning.">ابدأ بالتحقق المحلي. ثم أضف ذكاء النموذج.</h2>
+  <p data-ar="النواة الأولية مكتوبة بلغة Python القياسية وتعمل محليًا بدون شبكة أو تشغيل كود المشروع الذي تفحصه. ملفات Skills وPrompts تضيف منهجية الفحص المتعمق لنموذج AI الذي تختاره." data-en="The foundation scanner uses only Python's standard library and never executes the code under review. Portable skills and prompts guide your chosen AI model through deeper assessment.">النواة الأولية مكتوبة بلغة Python القياسية وتعمل محليًا بدون شبكة أو تشغيل كود المشروع الذي تفحصه. ملفات Skills وPrompts تضيف منهجية الفحص المتعمق لنموذج AI الذي تختاره.</p>
+  <div class="pillset"><span class="pill">Python stdlib</span><span class="pill">JSON</span><span class="pill">Markdown</span><span class="pill">SARIF 2.1.0</span><span class="pill">Read only</span></div>
+  <a class="primary" href="GETTING_STARTED.md" data-ar="دليل الاستخدام ←" data-en="View quick start →">دليل الاستخدام ←</a></div>
+  <div class="terminal" aria-label="Example CLI and illustrative output">
+    <div class="terminal-top"><div class="lights"><span></span><span></span><span></span></div><span>ASM / LOCAL BASELINE</span><span>v0.1</span></div>
+    <pre><span class="purple">$</span> python scripts/asm.py scan ./project \
+  --format markdown
+
+<span class="cyan"># AI Security Manager — Baseline Review</span>
+- Engine: offline heuristics
+- Results: evidence-backed review signals
+- Formats: Markdown, JSON, SARIF
+
+<span class="green">✔</span> Raw secret values redacted
+<span class="green">✔</span> Target code not executed
+<span class="green">✔</span> Unexamined surfaces disclosed
+
+<span class="purple">#</span> <span data-ar="مخرجات توضيحية وليست نتيجة فحص حقيقي" data-en="Illustration only — not a real scan">مخرجات توضيحية وليست نتيجة فحص حقيقي</span></pre>
+  </div>
+</div></section>
+<div class="container" style="padding-bottom:85px"><div class="note"><strong data-ar="حدود مهمة:" data-en="Important limitations:">حدود مهمة:</strong> <span data-ar="النسخة 0.1 ليست أداة اختبار اختراق شاملة أو بديلًا عن مراجعة أمنية متخصصة. جودة مراجعة AI تتأثر بقوة النموذج والسياق والأدوات، لكن لا يمكن لأي نموذج ضمان اكتشاف كل الثغرات. لا ترفع أسرارًا أو بيانات حساسة دون ضوابط مناسبة." data-en="v0.1 is not a comprehensive penetration-test suite or a replacement for specialist review. Stronger models can help with contextual analysis, but cannot guarantee every issue is found. Protect secrets and personal data when using AI services.">النسخة 0.1 ليست أداة اختبار اختراق شاملة أو بديلًا عن مراجعة أمنية متخصصة. جودة مراجعة AI تتأثر بقوة النموذج والسياق والأدوات، لكن لا يمكن لأي نموذج ضمان اكتشاف كل الثغرات. لا ترفع أسرارًا أو بيانات حساسة دون ضوابط مناسبة.</span></div></div>
+</main>
+<footer class="footer"><div class="container foot"><span>© 2026 AI Security Manager · Foundation v0.1</span><span data-ar="صُمم لمراجعة المشاريع المصرح بها فقط." data-en="For authorized defensive reviews only.">صُمم لمراجعة المشاريع المصرح بها فقط.</span><a href="https://github.com/Abdulrahman3M/AI-Security-Manager" target="_blank" rel="noopener noreferrer">GitHub Repository ↗</a></div></footer>
+<script>
+  (() => {
+    const control = document.getElementById("langToggle");
+    let english = false;
+    control.addEventListener("click", () => {
+      english = !english;
+      document.documentElement.lang = english ? "en" : "ar";
+      document.documentElement.dir = english ? "ltr" : "rtl";
+      document.querySelectorAll("[data-ar][data-en]").forEach(el => {
+        if (el.tagName === "H1") el.innerHTML = english ? el.dataset.en : el.dataset.ar;
+        else el.textContent = english ? el.dataset.en : el.dataset.ar;
+      });
+      control.textContent = english ? "العربية" : "EN";
+      control.setAttribute("aria-label", english ? "Switch to Arabic" : "Switch to English");
+    });
+  })();
+</script>
+</body></html>
