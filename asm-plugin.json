@@ -1,0 +1,40 @@
+{
+  "name": "ai-security-manager",
+  "display_name": "AI Security Manager",
+  "version": "0.1.0",
+  "status": "foundation",
+  "description": "Portable model-agnostic defensive security and quality review toolkit; not a universal marketplace package.",
+  "entrypoints": {
+    "agents": "AGENTS.md",
+    "main_skill": "skills/security-audit/SKILL.md",
+    "master_prompt": "prompts/master-audit.md",
+    "local_scanner": "scripts/asm.py",
+    "website": "docs/index.html"
+  },
+  "skills": [
+    "skills/security-audit/SKILL.md",
+    "skills/review-web/SKILL.md",
+    "skills/review-mobile-desktop/SKILL.md",
+    "skills/review-supply-chain/SKILL.md"
+  ],
+  "supported_hosts_with_guides": [
+    "Cursor",
+    "GitHub Copilot",
+    "Claude Code",
+    "Gemini CLI",
+    "general AGENTS.md agents"
+  ],
+  "scanner": {
+    "language": "Python 3.9+",
+    "dependencies": "stdlib only",
+    "outputs": [
+      "markdown",
+      "json",
+      "sarif"
+    ],
+    "default_mode": "read-only",
+    "limits": "selected line-based pattern detectors"
+  },
+  "third_party_code_copied": false,
+  "models": "agnostic"
+}
