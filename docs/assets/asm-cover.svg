@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="t d">
+<title id="t">AI Security Manager — Cyber Shield</title>
+<desc id="d">Original navy and cyan security cover with layered glass shield, scanning rings and circuitry. No text.</desc>
+<defs>
+  <radialGradient id="bg"><stop stop-color="#142c5a"/><stop offset=".52" stop-color="#08152e"/><stop offset="1" stop-color="#050a17"/></radialGradient>
+  <radialGradient id="haze"><stop stop-color="#18b8fe" stop-opacity=".22"/><stop offset="1" stop-color="#18b8fe" stop-opacity="0"/></radialGradient>
+  <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8befff" stop-opacity=".58"/><stop offset=".23" stop-color="#17478e" stop-opacity=".62"/><stop offset=".54" stop-color="#071936" stop-opacity=".93"/><stop offset="1" stop-color="#123e83" stop-opacity=".65"/></linearGradient>
+  <linearGradient id="edge" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#a2f1ff"/><stop offset=".4" stop-color="#00afff"/><stop offset=".8" stop-color="#5b55ff"/><stop offset="1" stop-color="#b0dcff"/></linearGradient>
+  <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#43d8ff"/><stop offset=".5" stop-color="#132d5f"/><stop offset="1" stop-color="#658aff"/></linearGradient>
+  <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse"><path d="M64 0H0V64" fill="none" stroke="#77bbff" stroke-opacity=".065" stroke-width="1"/></pattern>
+  <filter id="glow"><feGaussianBlur stdDeviation="16"/></filter>
+  <filter id="shine"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect width="1600" height="900" fill="url(#bg)"/><rect width="1600" height="900" fill="url(#grid)"/>
+<ellipse cx="1125" cy="444" rx="545" ry="465" fill="url(#haze)"/>
+<g fill="none" stroke="#3fc9ff" stroke-width="1" opacity=".22">
+  <path d="M0 155h360l85 85h315M0 370h425l100-100h232M0 653h428l135-135h225M1600 155h-256l-90 90h-160M1600 380h-218l-115-115h-100M1600 702h-280l-90-90h-166"/>
+  <path d="M100 810h402l140-140h145M200 91h320l112 112h150"/>
+</g>
+<g fill="#6ce4ff" opacity=".62"><circle cx="360" cy="155" r="5"/><circle cx="426" cy="370" r="4"/><circle cx="428" cy="653" r="4"/><circle cx="1344" cy="155" r="5"/><circle cx="1382" cy="380" r="4"/><circle cx="1320" cy="702" r="5"/></g>
+<g transform="translate(1110 447)">
+  <ellipse rx="405" ry="405" fill="none" stroke="#326abf" stroke-width="2" opacity=".28"/>
+  <ellipse rx="332" ry="332" fill="none" stroke="#2a98dc" stroke-width="2" stroke-dasharray="9 17" opacity=".48"/>
+  <ellipse rx="276" ry="276" fill="none" stroke="#77e6ff" stroke-width="1.5" stroke-dasharray="40 20 2 18" opacity=".43"/>
+  <path d="M-385 -1h70m630 0h70M0 -385v68M0 317v68" stroke="#7cf1ff" stroke-opacity=".55" stroke-width="2"/>
+  <path d="M0 -292C112 -255 177 -235 226 -215V27c-8 135-82 230-226 303C-145 257-219 162-226 27v-242C-177-235-112-255 0-292Z" fill="#19d8ff" opacity=".28" filter="url(#glow)"/>
+  <path d="M0 -292C112 -255 177 -235 226 -215V27c-8 135-82 230-226 303C-145 257-219 162-226 27v-242C-177-235-112-255 0-292Z" fill="url(#shield)" stroke="url(#edge)" stroke-width="7"/>
+  <path d="M0 -251c92 32 148 51 184 65V21C179 125 121 197 0 263-121 197-179 125-184 21v-207c36-14 92-33 184-65Z" fill="none" stroke="#a5f3ff" stroke-opacity=".23" stroke-width="2"/>
+  <g opacity=".42" stroke="#56cfff" stroke-width="2" fill="none">
+    <path d="M-178 -67h75l51 51h44M180 -78h-66l-53 50H22M-174 87h93l45-44h27M177 95h-85l-46-38H17"/>
+    <circle cx="-103" cy="-67" r="6" fill="#65deff"/><circle cx="114" cy="-78" r="6" fill="#65deff"/>
+    <circle cx="-81" cy="87" r="6" fill="#65deff"/><circle cx="92" cy="95" r="6" fill="#65deff"/>
+  </g>
+  <g transform="rotate(-10)">
+    <rect x="-88" y="-90" width="176" height="180" rx="34" fill="#082042" stroke="#1addff" stroke-width="4"/>
+    <rect x="-63" y="-65" width="126" height="130" rx="22" fill="url(#metal)" opacity=".38" stroke="#95e9ff" stroke-width="2"/>
+    <path d="M-30 8l22 22 48-55" stroke="#b1ffff" stroke-width="13" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <g stroke="#5aceff" stroke-width="5" stroke-linecap="round">
+      <path d="M-55 -98v-20M0 -98v-20M55 -98v-20M-55 98v20M0 98v20M55 98v20M-96 -54h-20M-96 0h-20M-96 55h-20M96 -54h20M96 0h20M96 55h20"/>
+    </g>
+  </g>
+  <ellipse cx="-75" cy="-170" rx="115" ry="24" fill="#a5fcff" opacity=".08" transform="rotate(-25 -75 -170)"/>
+</g>
+<g opacity=".55" stroke="#55bdff" fill="none">
+  <rect x="120" y="171" width="325" height="108" rx="17" stroke-opacity=".24"/>
+  <path d="M150 206h152M150 230h220M150 253h114" stroke-opacity=".26" stroke-width="6" stroke-linecap="round"/>
+  <rect x="150" y="587" width="294" height="125" rx="17" stroke-opacity=".22"/>
+  <circle cx="192" cy="628" r="11" fill="#21d5ff" fill-opacity=".56" stroke="none"/>
+  <path d="M220 626h174M186 670h208" stroke-opacity=".28" stroke-width="6" stroke-linecap="round"/>
+</g>
+<path d="M0 875h1600" stroke="#2799e2" stroke-opacity=".28"/>
+</svg>

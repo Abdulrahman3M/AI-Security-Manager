@@ -1,0 +1,23 @@
+name: ASM Foundation Checks
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout audited source
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Verify Python and compile baseline
+        run: |
+          python3 --version
+          python3 -m py_compile scripts/asm.py
+      - name: Unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Self-review baseline
+        run: python3 scripts/asm.py scan . --format json --output /tmp/asm-self-review.json
